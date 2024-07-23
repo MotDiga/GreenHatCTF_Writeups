@@ -1,4 +1,4 @@
-# Writeup Example
+# Is it prime RSA ?
 
 ## Challenge Description
 
