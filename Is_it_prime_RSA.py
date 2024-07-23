@@ -4,19 +4,26 @@ e = 71
 
 c = 200533373603843818341931478728286256099690774793486054511594711924824665438768257708540353207268087005296688517411944487868875695656767081519466198685540901962344040541995067587408703598268477991376652948856444817791505892088259295984693580869349171890123824999384812537791062618813950310982377183919220060100
 
+# n is a prime number p
 p = n
 
+# d = e^(-1) mod φ(p), φ(p) = p - 1
 d = pow(e, -1, p - 1)
 
 print(d, "\n\n")
+# Checking that d is correct, d*e = 1 mod φ(p)
 print((d * e) % (p - 1), "\n\n")
 
+# m = c^d mod p
 m = pow(c, d, p)
 
 print(m, "\n\n")
 
 import binascii
 
+# Converting m from decimal into hexadecimal
 st=("{:x}".format(m))
 print(st, "\n\n")
+# Converting m from hexadecimal to ASCII
 print(binascii.unhexlify(st))
+# b'YoU_reviSED_weLL_8a51cs_0F_rSa'
