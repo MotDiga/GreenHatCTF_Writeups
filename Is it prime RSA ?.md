@@ -18,15 +18,16 @@
 
 1.  **Initial Approach**
     
-    -   RSA is secure with n (from public key (n, e)) equale the product of 2 prime numbers, but not with n a prime number
-    -   We could get the private key (n, d) by calculating the euler's totient function of n wich is easy with n a prime number
+    -   RSA is secure with n (from public key (n, e)) equal to the product of 2 big prime numbers, but not with n a prime number
+    -   We can get the private key (n, d) by calculating the euler's totient function of n wich is easy with n a prime number
  
 2.  **Detailed Solution**
     
-    -   **Step 1**: Calculating φ(n) 
+    -   **Step 1**: Calculating φ(n)
+        -   Verifying that n is indeed a prime number, https://www.numberempire.com/primenumbers.php
         -   n a prime number and φ(p) = p - 1, for p a prime number
         -   => φ(n) = n - 1
-    -   **Step 2**: Calculating the d exponent form the private key (n, d)
+    -   **Step 2**: Calculating d form the private key (n, d)
         -   Using φ(n) = n - 1, e and n from the public key (n, e)
         -   d = e^(-1) mod φ(n) (using a special theorem (fermat little theorm) or a build in function like pow() in python)
     -   **Step 3**: Calculating the original message m
